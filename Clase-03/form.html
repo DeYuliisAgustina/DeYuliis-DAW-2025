@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio Clase 3 - Form</title>
+    </head>
+    <body>
+        <form action="mailto:?subject=Ejercicio Clase 3" target="_blank" method="post" enctype="text/plain">
+            <div>
+                <label for="nameID">Nombre</label>
+                <input type="text" name="name" id="nameID" placeholder="Nombre" required maxlength="10" minlength="2">
+            </div>
+            <div>
+                <label for="lastnameID">Apellido</label>
+                <input type="text" name="lastname" id="lastnameID" placeholder="Apellido">
+            </div>
+            <div>
+            <label for="emailID">Email</label>
+            <input type="email" name="email" id="emailID" placeholder="Email">
+            </div>
+            <div>
+                <label for="passwordID">Contraseña</label>
+                <input type="password" name="password" id="passwordID" placeholder="Contraseña">
+            </div>
+            <div>
+                <label for="SexoID">Sexo</label>
+                <select for="Sexo" id="Sexo">
+                <option value ="Femenino"> Femenino </option>
+                <option value="Masculino">Masculino</option>
+                </select>
+            </div>
+            <div>
+                <label for="rolID">Rol:</label>
+                <div>
+                    <label for="estudianteID">Estudiante</label>
+                    <input type="radio" name="rol" id="estudianteID">
+                    <label for="profesorID">Profesor</label>
+                    <input type="radio" name="rol" id="profesorID">
+                </div>
+            </div>
+            <div>
+                <label for="fechaNacimientoID">Fecha de Nacimiento</label>
+                <input type="date" name="fechaNacimiento" id="fechaNacimientoID">
+            </div>
+            <div>
+                <label for="">Dias de la semana disponibles</label>
+                <div>
+                    <label for="lunesID">Lunes</label>
+                    <input type="checkbox" name="lunes" id="lunesID">
+                    <label for="martesID">Martes</label>
+                    <input type="checkbox" name="martes" id="martesID">
+                    <label for="miercolesID">Miércoles</label>
+                    <input type="checkbox" name="miercoles" id="miercolesID">
+                    <label for="juevesID">Jueves</label>
+                    <input type="checkbox" name="jueves" id="juevesID">
+                    <label for="viernesID">Viernes</label>
+                    <input type="checkbox" name="viernes" id="viernesID">
+                    <label for="sabadoID">Sábado</label>
+                    <input type="checkbox" name="sabado" id="sabadoID">
+                    <label for="domingoID">Domingo</label>
+                    <input type="checkbox" name="domingo" id="domingoID">
+                </div>
+            </div>
+            <div>
+                <label for="comentariosID">Comentarios Extra</label>
+                <textarea name="comentarios" id="comentariosID" cols="60" rows="10"></textarea>
+            </div>
+            <div>
+                <input type="submit">
+                <input type="reset">
+            </div>
+        </form>
+        <a href="./index.html"><button>Volver al Inicio</button></a>
+    </body>
+</html>
