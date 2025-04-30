@@ -1,0 +1,100 @@
+    body {
+        font-style: Georgia, "serif"; /* font-style cambiado a font-family */
+        max-width: 1200px;
+        margin: 0 auto; /* para centrar */
+        padding: 0 15px; /*para que el contenido no esté pegado a los bordes */
+    }
+
+    .centered-header{
+        text-align: center;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    .violetNav .navLink {
+        color: #9B59D0;
+        font-size: 14px;
+    }
+
+    .separator {
+        color: #888;
+        margin: 5px;
+    }
+
+    .bienestar {
+        margin-top: 20px;
+    }
+
+    .article-subtitle {
+        font-size: 18px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+
+    .article-meta {
+        color: #666;
+    }
+
+    .article-intro {
+        margin: 25px 0;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+    
+    .first-letter {
+        font-size: 60px;
+        font-weight: bold; /* Esto la hace negrita */
+        float: left;
+        line-height: 0.8;
+        margin-right: 5px;
+        margin-top: -5px;
+    }
+    
+    .article-content {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Clase para los títulos con subrayado amarillo */
+    .titulo-amarillo {
+        font-weight: bold;         /* Hace que el texto aparezca en negrita */
+        border-bottom: 3px solid yellow;  /* Crea una línea amarilla de 3px de grosor debajo del texto */
+    }
+
+    /* Clase para cada elemento de sugerencia */
+    .sugerencia {
+        margin-bottom: 15px;      /* Añade espacio de 15px debajo de cada sugerencia */
+        padding-left: 20px;       /* Añade espacio de 20px a la izquierda para acomodar el guión */
+    }
+    
+    /* Ajusta el contenedor de video para que coincida con el ancho del texto */
+    .video-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .main-content {
+        max-width: 650px;
+        margin: 0 auto;
+        padding: 0 15px;
+        position: relative;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    header,
+    .main-content {
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+
