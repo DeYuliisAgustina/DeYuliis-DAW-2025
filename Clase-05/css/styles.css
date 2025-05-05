@@ -1,0 +1,317 @@
+/* ESTILOS GENERALES */
+  body {
+    font-family: inherit, serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    color: #333;
+    vertical-align: baseline;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #0066cc;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* HEADER Y NAVEGACIÓN */
+  .site-header {
+    margin-bottom: 20px;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .left-section,
+  .right-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .left-section img,
+  .right-section img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  #lupaicon img {
+    padding: auto;
+    margin: auto;
+  }
+  
+  .secciones-text {
+    margin: 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .centered-header {
+    text-align: center;
+    flex: 1;
+  }
+  
+  .centered-header img {
+    height: 50px;
+    width: auto;
+  }
+  
+  .session-buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .session-buttons button {
+    margin-left: 10px;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-iniciar {
+    background-color: white;
+    border: 1px solid #141414;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .btn-suscribir {
+    background-color: #FFCC00;
+    border-radius: 10px;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  
+  .precio-tachado {
+    text-decoration: line-through;
+    font-size: 11px;
+    margin-right: 3px;
+  }
+  
+  /* NAVEGACIÓN*/
+  .violetNav {
+    padding: 10px 0;
+    margin: 10px auto;
+    max-width: 850px;
+  }
+  
+  .violetNav .navLink {
+    color: #9B59D0;
+    font-size: 14px;
+  }
+  
+  .separator {
+    color: #888;
+    margin: 0 5px;
+  }
+  
+  .bienestar {
+    margin: 20px 0;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /*CONTENIDO PRINCIPAL */
+  .main-content {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .news-article {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  
+  /* ARTÍCULO */
+  .article-title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .article-subtitle {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    color: #555;
+  }
+  
+  .article-meta {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .meta-separator {
+    margin: 0 5px;
+  }
+  
+  /* IMÁGENES Y FIGURAS */
+  .article-image {
+    margin: 25px 0;
+    text-align: center;
+  }
+  
+  .article-image img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  figcaption {
+    font-size: 14px;
+    color: #666;
+    text-align: left;
+    margin-top: 10px;
+    line-height: 1.4;
+  }
+  
+  /* PÁRRAFOS Y CONTENIDO */
+  .article-intro {
+    margin: 25px 0;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .first-letter {
+    font-size: 60px;
+    font-weight: bold;
+    float: left;
+    line-height: 0.8;
+    margin-right: 5px;
+    margin-top: 8px;
+  }
+  
+  .article-content {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333;
+  }
+   
+  /* === ESTILOS ESPECÍFICOS === */
+  .titulo-amarillo {
+    font-weight: bold;
+    border-bottom: solid yellow;
+  }
+  
+  /* === VIDEO === */
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporción 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin: 30px 0;
+  }
+  
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* === FOOTER === */
+  .site-footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .footer-logo img {
+    height: 40px;
+    margin: 0 auto;
+  }
+  
+  /* ===== Breakpoints ===== */
+
+/* Para pantallas pequeñas, como celulares */
+@media only screen and (max-width: 480px) {
+  .mobile {
+    display: block;
+    background-color: green;
+  }
+
+  .header-top {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .secciones-text,
+  .btn-suscribir {
+    display: none;
+  }
+
+}
+
+/* Para pantallas medianas, como tablets */
+@media only screen and (min-width: 480px) and (max-width: 1023px) {
+  .tablet {
+    display: block;
+    background-color: red;
+  }
+
+  .centered-header img {
+    height: auto;
+    max-height: 50px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .centered-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 0 10px;
+    min-width: 0; /* con flexbox para evitar overflow */
+  }
+}
+
+/* Para pantallas grandes, como computadoras */
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  .desktop {
+    display: block;
+    background-color: blue;
+  }
+}
+
+  
+
+
+
+
+
+
+
+
