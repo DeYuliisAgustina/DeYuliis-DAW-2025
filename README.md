@@ -7,7 +7,7 @@ Repositorio de Agustina De Yuliis para la materia **Desarrollo y Arquitectura We
 
 ## 🌐 Ver online
 Podés ver el proyecto funcionando en GitHub Pages:  
-👉 [Ver sitio en vivo]([https://agudev.github.io/diario-web/](https://deyuliisagustina.github.io/DeYuliis-DAW-2025/Clase-06/index.html)) 
+👉 [Ver sitio en vivo](https://deyuliisagustina.github.io/DeYuliis-DAW-2025/Clase-06/index.html/) <!-- Reemplazá con tu link real -->
 
 ## 💻 Tecnologías utilizadas
 - 🌐 HTML5 semántico
