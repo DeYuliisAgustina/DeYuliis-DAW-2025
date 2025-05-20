@@ -1,4 +1,4 @@
-# 📰 Proyecto Diario Web
+# 📰 TPN2 DAW
 Repositorio de Agustina De Yuliis para la materia **Desarrollo y Arquitectura Web (DAW)**.  
 4to año - Turno noche - Ingeniería en Sistemas - UAI.
 
