@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 # 📰 Proyecto Diario Web
 
+=======
+# 📰 TPN2 DAW
+>>>>>>> e57182ca9ce184c5877011b3c5242578d7390764
 Repositorio de Agustina De Yuliis para la materia **Desarrollo y Arquitectura Web (DAW)**.  
 4to año - Turno noche - Ingeniería en Sistemas - UAI.
 
@@ -23,6 +27,9 @@ El sitio cuenta con:
 
 ## 🧑‍💻 Autor
 **Agustina De Yuliis**  
+<<<<<<< HEAD
 💬 Contacto: [tu-mail@example.com]  
 📍 Universidad Abierta Interamericana (UAI)
+=======
+>>>>>>> e57182ca9ce184c5877011b3c5242578d7390764
 
