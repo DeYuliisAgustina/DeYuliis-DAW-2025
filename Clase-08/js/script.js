@@ -8,13 +8,12 @@ form.addEventListener('submit', (e) => {
 
   inputs.forEach(input => {
     const mensaje = validar(input);
-    mostrarError(input, mensaje);
     if (mensaje) errores.push(mensaje);
   });
 
   if (errores.length === 0) {
     alert("Formulario enviado correctamente");
-    window.location.href = "index.html"; // Cambialo por el nombre de tu archivo si es distinto
+    window.location.href = "index.html"; // Cambialo por el nombre de tu archivo de noticias si es distinto
   } else {
     alert("Errores:\n\n" + errores.join('\n'));
   }
@@ -34,7 +33,7 @@ inputs.forEach(input => {
     const actualizarSaludo = () => {
       setTimeout(() => {
         saludo.textContent = 'HOLA ' + input.value.toUpperCase();
-      }, 0);
+      }, 0); // Espera que se actualice el valor
     };
 
     input.addEventListener('keydown', actualizarSaludo);
@@ -71,12 +70,5 @@ function validar(input) {
 }
 
 function mostrarError(input, mensaje) {
-  const errorElement = input.nextElementSibling;
-  errorElement.textContent = mensaje;
-
-  if (mensaje) {
-    input.classList.add('error-input');
-  } else {
-    input.classList.remove('error-input');
-  }
+  input.nextElementSibling.textContent = mensaje;
 }
