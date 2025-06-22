@@ -4,65 +4,80 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Suscripción | Noticias Actualidad</title>
+  <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/suscripcion.css" />
 </head>
 <body>
   <div class="container">
+    <!-- Header -->
     <header class="header">
       <h1>Noticias Actualidad</h1>
       <p class="fecha">3 Junio, 2025</p>
     </header>
 
+    <!-- Formulario -->
     <main class="main-wrapper">
       <section class="main-content">
-        <h2 id="titulo-form">HOLA</h2>
-        <form id="form-suscripcion" novalidate>
-          <div class="formulario-grid">
-            <div class="form-col">
-              <label for="nombre">Nombre completo</label>
-              <input type="text" id="nombre" name="nombre" />
-              <small class="error" id="error-nombre"></small>
+        <form id="form-suscripcion" class="formulario-grid" novalidate>
+          <!-- SALUDO EN AMBAS COLUMNAS -->
+          <h2 id="titulo-form">HOLA</h2>
 
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" />
-              <small class="error" id="error-email"></small>
-
-              <label for="password">Contraseña</label>
-              <input type="password" id="password" name="password" />
-              <small class="error" id="error-password"></small>
-
-              <label for="repassword">Repetir contraseña</label>
-              <input type="password" id="repassword" name="repassword" />
-              <small class="error" id="error-repassword"></small>
-
-              <label for="edad">Edad</label>
-              <input type="number" id="edad" name="edad" />
-              <small class="error" id="error-edad"></small>
-            </div>
-
-            <div class="form-col">
-              <label for="telefono">Teléfono</label>
-              <input type="text" id="telefono" name="telefono" />
-              <small class="error" id="error-telefono"></small>
-
-              <label for="direccion">Dirección</label>
-              <input type="text" id="direccion" name="direccion" />
-              <small class="error" id="error-direccion"></small>
-
-              <label for="ciudad">Ciudad</label>
-              <input type="text" id="ciudad" name="ciudad" />
-              <small class="error" id="error-ciudad"></small>
-
-              <label for="cp">Código Postal</label>
-              <input type="text" id="cp" name="cp" />
-              <small class="error" id="error-cp"></small>
-
-              <label for="dni">DNI</label>
-              <input type="text" id="dni" name="dni" />
-              <small class="error" id="error-dni"></small>
-            </div>
+          <!-- COLUMNA 1 -->
+          <div class="campo">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" />
+            <small class="error" id="error-nombre"></small>
           </div>
+          <div class="campo">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" />
+            <small class="error" id="error-password"></small>
+          </div>
+          <div class="campo">
+            <label for="repassword">Repetir Contraseña</label>
+            <input type="password" id="repassword" name="repassword" />
+            <small class="error" id="error-repassword"></small>
+          </div>
+          <div class="campo">
+            <label for="edad">Edad</label>
+            <input type="number" id="edad" name="edad" />
+            <small class="error" id="error-edad"></small>
+          </div>
+          <div class="campo">
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" name="direccion" />
+            <small class="error" id="error-direccion"></small>
+          </div>
+          <div class="campo">
+            <label for="cp">Código Postal</label>
+            <input type="text" id="cp" name="cp" />
+            <small class="error" id="error-cp"></small>
+          </div>
+
+          <!-- COLUMNA 2 -->
+          <div class="campo">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" />
+            <small class="error" id="error-email"></small>
+          </div>
+          <div class="campo">
+            <label for="telefono">Teléfono</label>
+            <input type="text" id="telefono" name="telefono" />
+            <small class="error" id="error-telefono"></small>
+          </div>
+          <div class="campo">
+            <label for="ciudad">Ciudad</label>
+            <input type="text" id="ciudad" name="ciudad" />
+            <small class="error" id="error-ciudad"></small>
+          </div>
+          <div class="campo">
+            <label for="dni">DNI</label>
+            <input type="text" id="dni" name="dni" />
+            <small class="error" id="error-dni"></small>
+          </div>
+
+          <!-- BOTÓN -->
           <div class="form-button">
             <button type="submit">Enviar</button>
           </div>
@@ -70,6 +85,7 @@
       </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-seccion">
