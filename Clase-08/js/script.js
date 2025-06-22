@@ -38,7 +38,6 @@ form.addEventListener('submit', e => {
   });
 
   if (errores.length === 0) {
-    // --- No hay errores: recogemos datos ---
     const datos = {};
     inputs.forEach(i => datos[i.name] = i.value.trim());
 
