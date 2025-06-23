@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Referencias
-  const form       = document.getElementById("form-suscripcion");
-  const saludo     = document.getElementById("titulo-form");
-  const inputs     = form.querySelectorAll("input");
-  const nombreInput= document.getElementById("nombre");
+  const form        = document.getElementById("form-suscripcion");
+  const saludo      = document.getElementById("titulo-form");
+  const inputs      = form.querySelectorAll("input");
+  const nombreInput = document.getElementById("nombre");
 
   // 1) Saludo dinámico
   function actualizarSaludo() {
@@ -14,60 +13,51 @@ document.addEventListener("DOMContentLoaded", function () {
   nombreInput.addEventListener("keydown", actualizarSaludo);
   nombreInput.addEventListener("focus",  actualizarSaludo);
 
-  // 2) Validación inline (blur/focus)
+  // 2) Validación inline
   inputs.forEach(input => {
-    input.addEventListener("blur", () => {
-      mostrarError(input, validar(input));
-    });
-    input.addEventListener("focus", () => {
-      mostrarError(input, "");
-    });
+    input.addEventListener("blur",  () => mostrarError(input, validar(input)));
+    input.addEventListener("focus", () => mostrarError(input, ""));
   });
 
   // 3) Envío de formulario
-  form.addEventListener("submit", e => {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
     let errores = [];
 
-    // Validamos cada campo
     inputs.forEach(input => {
-      const mensaje = validar(input);
-      mostrarError(input, mensaje);
-      if (mensaje) errores.push(mensaje);
+      const msg = validar(input);
+      mostrarError(input, msg);
+      if (msg) errores.push(msg);
     });
 
     if (errores.length === 0) {
-      // Recogemos datos
-      const datosFinales = {};
-      inputs.forEach(i => datosFinales[i.name] = i.value.trim());
+      // recojo datos
+      const datos = {};
+      inputs.forEach(i => datos[i.name] = i.value.trim());
 
-      // Simulamos llamada GET a JSONPlaceholder
+      // llamada simulada
       fetch("https://jsonplaceholder.typicode.com/posts/1")
         .then(res => {
           if (!res.ok) throw new Error("Código: " + res.status);
           return res.json();
         })
         .then(() => {
-          // Guardamos en LocalStorage
-          localStorage.setItem("datosSuscripcion", JSON.stringify(datosFinales));
-          // Mostramos modal de éxito
+          localStorage.setItem("datosSuscripcion", JSON.stringify(datos));
           mostrarModal(
             "¡Suscripción exitosa!",
             "Gracias por registrarte",
-            JSON.stringify(datosFinales, null, 2)
+            JSON.stringify(datos, null, 2)
           );
         })
         .catch(err => {
-          // Mostramos modal de error
           mostrarModal("Error al enviar", "Ocurrió un error", err.message);
         });
-
     } else {
-      alert("Errores encontrados:\n\n" + errores.join("\n"));
+      alert("Errores:\n\n" + errores.join("\n"));
     }
   });
 
-  // 4) Precarga desde LocalStorage
+  // 4) Precarga de LocalStorage
   const guardados = localStorage.getItem("datosSuscripcion");
   if (guardados) {
     const data = JSON.parse(guardados);
@@ -76,75 +66,95 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     if (data.nombre) saludo.textContent = "HOLA " + data.nombre.toUpperCase();
   }
+
+  // 5) Eventos modal
+  document.getElementById("modal-cerrar")
+          .addEventListener("click", ocultarModalYredirigir);
+  window.addEventListener("click", e => {
+    if (e.target === document.getElementById("modal"))
+      ocultarModalYredirigir();
+  });
 });
 
-// 5) Función de validación
+// Función de validación
 function validar(input) {
   const val = input.value.trim();
   switch (input.name) {
     case "nombre":
       return val.length > 6 && val.includes(" ")
-        ? "" : "Debe tener más de 6 letras y un espacio.";
+        ? ""
+        : "Debe tener más de 6 letras y un espacio.";
+
     case "email":
       return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val)
-        ? "" : "Email inválido.";
+        ? ""
+        : "Email inválido.";
+
     case "password":
-      return /^[A-Za-z0-9]{8,}$/.test(val)
-        ? "" : "Mínimo 8 caracteres letras/números.";
-    case "repassword":
+      // 8+ chars, al menos una letra y un número
+      return /^(?=.*[A-Za-z])(?=.*\d).{8,}$/.test(val)
+        ? ""
+        : "Mínimo 8 caracteres, al menos una letra y un número.";
+
+    case "repetirPassword":
       return val === document.getElementById("password").value
-        ? "" : "Las contraseñas no coinciden.";
+        ? ""
+        : "Las contraseñas no coinciden.";
+
     case "edad":
       return Number(val) >= 18
-        ? "" : "Edad mínima 18.";
+        ? ""
+        : "Edad mínima 18.";
+
     case "telefono":
       return /^\d{7,}$/.test(val)
-        ? "" : "Teléfono inválido (sólo números, mínimo 7 dígitos).";
+        ? ""
+        : "Teléfono inválido (solo números, min 7 dígitos).";
+
     case "direccion":
       return val.length >= 5 && val.includes(" ")
-        ? "" : "Dirección inválida.";
+        ? ""
+        : "Dirección inválida.";
+
     case "ciudad":
       return val.length >= 3
-        ? "" : "Ciudad inválida.";
+        ? ""
+        : "Ciudad inválida.";
+
     case "cp":
       return val.length >= 3
-        ? "" : "Código postal inválido.";
+        ? ""
+        : "Código postal inválido.";
+
     case "dni":
       return /^[0-9]{7,8}$/.test(val)
-        ? "" : "DNI debe tener 7 u 8 dígitos.";
+        ? ""
+        : "DNI debe tener 7 u 8 dígitos.";
+
     default:
       return "";
   }
 }
 
-// 6) Mostrar/ocultar error en cada input
+
+// Mostrar/ocultar error
 function mostrarError(input, mensaje) {
-  const errorEl = input.nextElementSibling;
-  errorEl.textContent = mensaje;
+  const err = input.nextElementSibling;
+  err.textContent = mensaje;
   if (mensaje) input.classList.add("error-input");
   else        input.classList.remove("error-input");
 }
 
-// 7) Modal y redirección
+// Modal + redirección
 function mostrarModal(titulo, mensaje, datos = "") {
-  const modal = document.getElementById("modal");
+  const m = document.getElementById("modal");
   document.getElementById("modal-titulo").textContent  = titulo;
-  document.getElementById("modal-mensaje").textContent = mensaje;
-  document.getElementById("modal-datos").textContent   = datos;
-  modal.classList.remove("oculto");
+  document.getElementById("modal-mensaje").textContent= mensaje;
+  document.getElementById("modal-datos").textContent  = datos;
+  m.classList.remove("oculto");
 }
-
 function ocultarModalYredirigir() {
-  const modal = document.getElementById("modal");
-  modal.classList.add("oculto");
+  const m = document.getElementById("modal");
+  m.classList.add("oculto");
   window.location.href = "index.html";
 }
-
-// 8) Eventos para cerrar modal
-document.getElementById("modal-cerrar")
-        .addEventListener("click", ocultarModalYredirigir);
-
-window.addEventListener("click", e => {
-  const modal = document.getElementById("modal");
-  if (e.target === modal) ocultarModalYredirigir();
-});
