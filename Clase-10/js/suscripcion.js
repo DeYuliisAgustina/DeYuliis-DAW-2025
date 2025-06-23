@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
       // recojo datos
       const datos = {};
       inputs.forEach(i => datos[i.name] = i.value.trim());
-
-      // llamada simulada
+      
+      //simulo Get
       fetch("https://jsonplaceholder.typicode.com/posts/1")
         .then(res => {
           if (!res.ok) throw new Error("Código: " + res.status);
