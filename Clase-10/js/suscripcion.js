@@ -84,38 +84,60 @@ function validar(input) {
   switch (input.name) {
     case "nombre":
       return val.length > 6 && val.includes(" ")
-        ? "" : "Debe tener más de 6 letras y un espacio.";
+        ? ""
+        : "Debe tener más de 6 letras y un espacio.";
+
     case "email":
       return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val)
-        ? "" : "Email inválido.";
+        ? ""
+        : "Email inválido.";
+
     case "password":
-      return /^[A-Za-z0-9]{8,}$/.test(val)
-        ? "" : "Mínimo 8 caracteres letras/números.";
-    case "repassword":
+      // 8+ chars, al menos una letra y un número
+      return /^(?=.*[A-Za-z])(?=.*\d).{8,}$/.test(val)
+        ? ""
+        : "Mínimo 8 caracteres, al menos una letra y un número.";
+
+    case "repetirPassword":
       return val === document.getElementById("password").value
-        ? "" : "Las contraseñas no coinciden.";
+        ? ""
+        : "Las contraseñas no coinciden.";
+
     case "edad":
       return Number(val) >= 18
-        ? "" : "Edad mínima 18.";
+        ? ""
+        : "Edad mínima 18.";
+
     case "telefono":
       return /^\d{7,}$/.test(val)
-        ? "" : "Teléfono inválido (sólo números, mínimo 7 dígitos).";
+        ? ""
+        : "Teléfono inválido (solo números, min 7 dígitos).";
+
     case "direccion":
       return val.length >= 5 && val.includes(" ")
-        ? "" : "Dirección inválida.";
+        ? ""
+        : "Dirección inválida.";
+
     case "ciudad":
       return val.length >= 3
-        ? "" : "Ciudad inválida.";
+        ? ""
+        : "Ciudad inválida.";
+
     case "cp":
       return val.length >= 3
-        ? "" : "Código postal inválido.";
+        ? ""
+        : "Código postal inválido.";
+
     case "dni":
       return /^[0-9]{7,8}$/.test(val)
-        ? "" : "DNI debe tener 7 u 8 dígitos.";
+        ? ""
+        : "DNI debe tener 7 u 8 dígitos.";
+
     default:
       return "";
   }
 }
+
 
 // 6) Mostrar/ocultar error en cada input
 function mostrarError(input, mensaje) {
